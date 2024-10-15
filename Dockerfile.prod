@@ -1,0 +1,30 @@
+FROM node:20-alpine AS prod
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm i -g @nestjs/cli
+RUN npm install --legacy-peer-deps
+
+FROM prod AS build
+
+COPY . .
+
+RUN npm run build
+
+
+FROM prod AS production
+RUN apk --no-cache update && \
+    apk --no-cache add docker-cli docker
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY public/images /app/public/images/
+COPY --from=build /usr/src/app/node_modules ./node_modules
+COPY --from=build /usr/src/app/dist ./dist
+
+EXPOSE 2102
+CMD ["node", "dist/main"]
+

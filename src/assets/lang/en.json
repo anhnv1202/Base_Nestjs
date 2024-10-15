@@ -1,0 +1,14 @@
+{
+	"item-not-found": "「%s」was not existed",
+	"item-existed": "[%s] already existed",
+	"has-been-used": "[%s] has been used",
+	"update-check-same-property": "「%s」was existed, please try again",
+	"query-invalid": "「%s」There is an error in your input. Please enter again.",
+	"domain-not-point-server": "The domain is not connected to Opensitex IP yet; please reconnect or wait for further instructions.",
+	"domain-invalid": "The domain is invalid",
+	"need-sub-domain": "The domain need sub domain",
+	"checkout-expired": "checkout has expired",
+	"product-not-in-store": "Product not in store",
+	"{}": "{}",
+	"2531_m1vi7tdez07r": "2531_m1vi7tdez07r"
+}
